@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.body %></td>
+  </tr>
+  <% if logged_in? %>
+    <td> | By: <%= post.user.name %></td>
+  <% end %>
+  <br>
+<% end %>
+<%= link_to 'Write a Post', new_post_path %>
